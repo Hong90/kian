@@ -1,3 +1,4 @@
+<?php
 function daysBetweenAndOddEven($startDate, $endDate) {
     // Convert dates to DateTime objects
     $start = new DateTime($startDate);
@@ -17,3 +18,4 @@ function daysBetweenAndOddEven($startDate, $endDate) {
 
 echo daysBetweenAndOddEven("2024-03-01", "2024-03-10") . "\n";
 // Outputs: Number of days between 2024-03-01 and 2024-03-10:
+?>
