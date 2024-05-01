@@ -4,7 +4,7 @@ function daysBetweenAndOddEven($startDate, $endDate) {
     $start = new DateTime($startDate);
     $end = new DateTime($endDate);
 
-    // Calculate the difference between dates
+    // difference between dates
     $interval = $start->diff($end);
 
     // total number of days
