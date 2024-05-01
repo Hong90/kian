@@ -1,16 +1,16 @@
 <?php
 function daysBetweenAndOddEven($startDate, $endDate) {
-    // Convert dates to DateTime objects
+    // Cdates to DateTime objects
     $start = new DateTime($startDate);
     $end = new DateTime($endDate);
 
     // Calculate the difference between dates
     $interval = $start->diff($end);
 
-    // Get the total number of days
+    // total number of days
     $totalDays = $interval->days;
 
-    // Determine if the number of days is odd or even
+    // Determine number of days is odd or even
     $oddEven = ($totalDays % 2 === 0) ? "even" : "odd";
 
     return "Number of days between $startDate and $endDate: $totalDays days. This is an $oddEven number of days.";
