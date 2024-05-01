@@ -1,0 +1,17 @@
+def checkDiscount(purchaseValue):
+    if purchaseValue >= 500:
+        discount = 0.10  # 10% discount for purchases over 500
+    elif purchaseValue >= 100:
+        discount = 0.05  # 5% discount for purchases between 100 and 500
+    else:
+        discount = 0  # No discount for purchases below 100
+
+    if discount > 0:
+        discountPercentage = discount * 100
+        return f"Purchase Value is {purchaseValue}, discount is {discountPercentage}%"
+    else:
+        return f"Purchase Value is {purchaseValue}, there are no discount."
+
+# Test cases
+print(checkDiscount(300))  # Purchase Value is 300 , discount is 5%
+print(checkDiscount(80))   # Purchase Value is 80 , there are no discount.
