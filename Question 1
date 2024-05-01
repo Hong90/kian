@@ -1,0 +1,43 @@
+<?php
+class PhotoSharingWebsite {
+    
+    private $lastDownloadTime = 0;
+    private $downloadCount = 0;
+
+   public function checkDownload($memberType) {
+        $currentTime = time();
+
+        // Check if member type is 'nonmember' or 'member'
+        if ($memberType === 'nonmember') {
+            if ($currentTime - $this->lastDownloadTime >= 5 || $this->downloadCount == 0) {
+                $this->lastDownloadTime = $currentTime;
+                $this->downloadCount++;
+                return "Your download is starting...";
+            } else {
+                return "Too many downloads";
+            }
+        } elseif ($memberType === 'member') {
+            if (($currentTime - $this->lastDownloadTime >= 5 || $this->downloadCount < 2) && $this->downloadCount >= 0) {
+                $this->lastDownloadTime = $currentTime;
+                $this->downloadCount++;
+                return "Your download is starting...";
+            } else {
+                return "Too many downloads";
+            }
+        } else {
+            return "Invalid member type";
+        }
+    }
+}
+
+$website = new PhotoSharingWebsite();
+
+echo $website->checkDownload('nonmember') . "\n"; // Your download is starting...
+sleep(3);
+echo $website->checkDownload('nonmember') . "\n"; // Too many downloads
+
+echo $website->checkDownload('member') . "\n"; // Your download is starting...
+sleep(3);
+echo $website->checkDownload('member') . "\n"; // Your download is starting...
+sleep(2);
+echo $website->checkDownload('member') . "\n"; // Too many downloads
