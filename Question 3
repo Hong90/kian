@@ -1,0 +1,27 @@
+import datetime
+
+def days_between_dates(date1, date2):
+    # Convert string dates to datetime objects
+    date1 = datetime.datetime.strptime(date1, "%Y-%m-%d")
+    date2 = datetime.datetime.strptime(date2, "%Y-%m-%d")
+
+    # Calculate the difference between the two dates
+    delta = abs(date2 - date1).days
+
+    return delta
+
+def is_odd_or_even(num):
+    if num % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+def analyze_dates(date1, date2):
+    days = days_between_dates(date1, date2)
+    result = is_odd_or_even(days)
+    return f"The number of days between {date1} and {date2} is {days}. It's {result}."
+
+# Test cases
+date1 = "2024-04-25"
+date2 = "2024-05-01"
+print(analyze_dates(date1, date2))  # Output: The number of days between 2024-04-25 and 2024-05-01 is 6. It's even.
