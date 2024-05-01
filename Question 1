@@ -32,13 +32,13 @@ class PhotoSharingWebsite {
 
 $website = new PhotoSharingWebsite();
 
-echo $website->checkDownload('nonmember') . "\n"; // Your download is starting...
+echo $website->checkDownload('nonmember') . "\n"; 
 sleep(3);
-echo $website->checkDownload('nonmember') . "\n"; // Too many downloads
+echo $website->checkDownload('nonmember') . "\n"; 
 
-echo $website->checkDownload('member') . "\n"; // Your download is starting...
+echo $website->checkDownload('member') . "\n"; 
 sleep(3);
-echo $website->checkDownload('member') . "\n"; // Your download is starting...
+echo $website->checkDownload('member') . "\n"; 
 sleep(2);
-echo $website->checkDownload('member') . "\n"; // Too many downloads
-?>
+echo $website->checkDownload('member') . "\n"; 
+
