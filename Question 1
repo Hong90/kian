@@ -1,7 +1,7 @@
 <?php
 class PhotoSharingWebsite {
     
-    private $lastDownloadTime = 0;
+    private $DownloadTime = 0;
     private $downloadCount = 0;
 
    public function checkDownload($memberType) {
@@ -9,16 +9,16 @@ class PhotoSharingWebsite {
 
         // Check if member type is 'nonmember' or 'member'
         if ($memberType === 'nonmember') {
-            if ($currentTime - $this->lastDownloadTime >= 5 || $this->downloadCount == 0) {
-                $this->lastDownloadTime = $currentTime;
+            if ($currentTime - $this->DownloadTime >= 5 || $this->downloadCount == 0) {
+                $this->DownloadTime = $currentTime;
                 $this->downloadCount++;
                 return "Your download is starting...";
             } else {
                 return "Too many downloads";
             }
         } elseif ($memberType === 'member') {
-            if (($currentTime - $this->lastDownloadTime >= 5 || $this->downloadCount < 2) && $this->downloadCount >= 0) {
-                $this->lastDownloadTime = $currentTime;
+            if (($currentTime - $this->DownloadTime >= 5 || $this->downloadCount < 2) && $this->downloadCount >= 0) {
+                $this->DownloadTime = $currentTime;
                 $this->downloadCount++;
                 return "Your download is starting...";
             } else {
@@ -40,5 +40,5 @@ echo $website->checkDownload('member') . "\n";
 sleep(3);
 echo $website->checkDownload('member') . "\n"; 
 sleep(2);
-echo $website->checkDownload('member') . "\n"; 
+echo $website->checkDownload('member') . "\n";  
 
