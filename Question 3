@@ -1,6 +1,6 @@
 <?php
 function daysBetweenAndOddEven($startDate, $endDate) {
-    // Cdates to DateTime objects
+    // dates to DateTime objects
     $start = new DateTime($startDate);
     $end = new DateTime($endDate);
 
