@@ -12,6 +12,5 @@ def checkDiscount(purchaseValue):
     else:
         return f"Purchase Value is {purchaseValue}, there are no discount."
 
-# Test cases
 print(checkDiscount(300))  # Purchase Value is 300 , discount is 5%
 print(checkDiscount(80))   # Purchase Value is 80 , there are no discount.
