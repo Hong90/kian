@@ -41,3 +41,4 @@ sleep(3);
 echo $website->checkDownload('member') . "\n"; // Your download is starting...
 sleep(2);
 echo $website->checkDownload('member') . "\n"; // Too many downloads
+?>
